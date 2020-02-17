@@ -330,6 +330,7 @@ def main():
         
         restart = input('\nWould you like to restart? Enter y/n.\n?')
         if restart.lower() != 'y':
+            print('Have a good time!')
             break
 
 
