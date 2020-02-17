@@ -49,6 +49,7 @@ def get_filters():
                 city = 'washington.csv'
                 break         
     # get user input for month (all, january, february, ... , june)
+    #month = 1, weekday = 2, both =3, not at all =4
     while True:
         inter_val = input('Would you like to filter the data by \n 1: month \n 2: weekday \n 3: both \n 4: not at all \n (Enter 1,2,3 or 4)\n?')
         if inter_val not in ('1','2','3','4'):
