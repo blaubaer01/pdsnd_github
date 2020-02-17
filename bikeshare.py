@@ -35,17 +35,17 @@ def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
-        cit = input('Would you like to see data for: \n Chicago ="C" \n New York ="NY" \n or Washington ="W" \n?').lower()
-        if cit not in ('c','ny','w'):
+        cit = input('Would you like to see data for: \n Chicago ="Chicago" \n New York ="New_York" \n or Washington ="Washington" \n?').lower()
+        if cit not in ('chicago','new_york','washington'):
             print('Wrong Input! Please do Input again!')
         else:
-            if cit == 'c':
+            if cit == 'chicago':
                 city = 'chicago.csv'
                 break
-            elif cit == 'ny':
+            elif cit == 'new_york':
                 city = 'new_york_city.csv'
                 break
-            elif cit == 'w':
+            elif cit == 'washington':
                 city = 'washington.csv'
                 break         
     # get user input for month (all, january, february, ... , june)
