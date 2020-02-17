@@ -37,7 +37,7 @@ def get_filters():
     while True:
         cit = input('Would you like to see data for: \n Chicago ="C" \n New York ="NY" \n or Washington ="W" \n?').lower()
         if cit not in ('c','ny','w'):
-            print('Wrong Input! Please repeat!')
+            print('Wrong Input! Please do Input again!')
         else:
             if cit == 'c':
                 city = 'chicago.csv'
