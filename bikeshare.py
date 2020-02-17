@@ -128,11 +128,9 @@ def load_data(city, month, day):
     max_month_name = dict_month_number[max_month_int]
     monthtest = int(dict_month[month])
 
-    #if monthtest > max_month_int:
-     #   print('Sorry, Month is out of Range!, please take an other Month')
-      #  get_filters()
     
-    #Now get filter    
+    
+    #Now use the requested filter    
     if month == "all":
         return df
     else:
