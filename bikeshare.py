@@ -31,7 +31,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     #change color
-    print("\033[1;37;40m \n")
+    print("\033[2;37;40m Underlined text\033[0;37;40m \n")
     print('Hello! Let\'s explore some US bikeshare data!')
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
