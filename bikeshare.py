@@ -50,11 +50,11 @@ def get_filters():
                 break         
     # get user input for month (all, january, february, ... , june)
     while True:
-        inter_val = input('Would you like to filter the data by \n 1: month \n 2: weekday \n 3: both \n 4: not at all \n (Enter 1,2,3 or 4)\n?')
-        if inter_val not in ('1','2','3','4'):
+        inter_val = input('Would you like to filter the data by \n a: month \n b: weekday \n c: both \n d: not at all \n (Enter 1,2,3 or 4)\n?')
+        if inter_val not in ('a','b','c','d'):
             print('Wrong Input! Please repeat!')
         else:
-            if inter_val == '1':
+            if inter_val == 'a':
                 month = input('Input requested month: \n (Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec) \n?').lower()
                 if month not in ('jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'):
                     print('Wrong Input! Please repeat!')
@@ -63,7 +63,7 @@ def get_filters():
                     day = 'none'
                     break
                     print('-'*40)
-            elif inter_val == '2':
+            elif inter_val == 'b':
                 day = input('Input requested day: \n (Mo,Tu,We,Th,Fr,Sa;Su) \n?').lower()
                 if day not in ('mo','tu','we','th','fr','sa','su'):
                     print('Wrong Input! Please repeat!')
@@ -72,7 +72,7 @@ def get_filters():
                     month = 'none'
                     break
                     print('-'*40)
-            elif inter_val == '3':
+            elif inter_val == 'c':
                 month = input('Input requested month: \n (Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec) \n?').lower()
                 if month not in ('jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'):
                     print('Wrong Input! Please repeat!')
@@ -86,7 +86,7 @@ def get_filters():
                         month = month
                         break
                         print('-'*40)
-            elif inter_val == '4':
+            elif inter_val == 'd':
                 #time_int = 'all'
                 month = 'all'
                 day = 'all'
