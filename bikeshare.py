@@ -242,6 +242,10 @@ def trip_duration_stats(df):
     # display mean travel time
     mean_duration = df['Trip Duration'].mean()
     print('Average of trip duration: ', mean_duration)
+    # display standard deviation travel time
+    st_dev_duration = df['Trip Duration'].std()
+    print('Standard Deviation of the Trip Duration: ', st_dev_duration)
+    
     print('-'*40)
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('*'*40)
