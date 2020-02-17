@@ -31,31 +31,31 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     #change color
-    print("\033[1;37;40m \n")
+    print("\033[2;37;40m Underlined text\033[0;37;40m \n")
     print('Hello! Let\'s explore some US bikeshare data!')
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
-        cit = input('Would you like to see data for: \n Chicago ="C" \n New York ="NY" \n or Washington ="W" \n?').lower()
-        if cit not in ('c','ny','w'):
-            print('Wrong Input! Please repeat!')
+        cit = input('Would you like to see data for: \n Chicago ="Chicago" \n New York ="New_York" \n or Washington ="Washington" \n?').lower()
+        if cit not in ('chicago','new_york','washington'):
+            print('Wrong Input! Please do Input again!')
         else:
-            if cit == 'c':
+            if cit == 'chicago':
                 city = 'chicago.csv'
                 break
-            elif cit == 'ny':
+            elif cit == 'new_york':
                 city = 'new_york_city.csv'
                 break
-            elif cit == 'w':
+            elif cit == 'washington':
                 city = 'washington.csv'
                 break         
     # get user input for month (all, january, february, ... , june)
     #month = 1, weekday = 2, both =3, not at all =4
     while True:
-        inter_val = input('Would you like to filter the data by \n 1: month \n 2: weekday \n 3: both \n 4: not at all \n (Enter 1,2,3 or 4)\n?')
-        if inter_val not in ('1','2','3','4'):
+        inter_val = input('Would you like to filter the data by \n a: month \n b: weekday \n c: both \n d: not at all \n (Enter 1,2,3 or 4)\n?')
+        if inter_val not in ('a','b','c','d'):
             print('Wrong Input! Please repeat!')
         else:
-            if inter_val == '1':
+            if inter_val == 'a':
                 month = input('Input requested month: \n (Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec) \n?').lower()
                 if month not in ('jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'):
                     print('Wrong Input! Please repeat!')
@@ -64,7 +64,7 @@ def get_filters():
                     day = 'none'
                     break
                     print('-'*40)
-            elif inter_val == '2':
+            elif inter_val == 'b':
                 day = input('Input requested day: \n (Mo,Tu,We,Th,Fr,Sa;Su) \n?').lower()
                 if day not in ('mo','tu','we','th','fr','sa','su'):
                     print('Wrong Input! Please repeat!')
@@ -73,7 +73,7 @@ def get_filters():
                     month = 'none'
                     break
                     print('-'*40)
-            elif inter_val == '3':
+            elif inter_val == 'c':
                 month = input('Input requested month: \n (Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec) \n?').lower()
                 if month not in ('jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'):
                     print('Wrong Input! Please repeat!')
@@ -87,7 +87,7 @@ def get_filters():
                         month = month
                         break
                         print('-'*40)
-            elif inter_val == '4':
+            elif inter_val == 'd':
                 #time_int = 'all'
                 month = 'all'
                 day = 'all'
@@ -241,6 +241,10 @@ def trip_duration_stats(df):
     # display mean travel time
     mean_duration = df['Trip Duration'].mean()
     print('Average of trip duration: ', mean_duration)
+    # display standard deviation travel time
+    st_dev_duration = df['Trip Duration'].std()
+    print('Standard Deviation of the Trip Duration: ', st_dev_duration)
+    
     print('-'*40)
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('*'*40)
@@ -329,6 +333,7 @@ def main():
         
         restart = input('\nWould you like to restart? Enter y/n.\n?')
         if restart.lower() != 'y':
+            print('Have a good time!')
             break
 
 
